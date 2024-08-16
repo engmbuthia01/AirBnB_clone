@@ -12,15 +12,15 @@ class BaseModel:
     def __init__(self):
         """initializes a new instance of the BaseModel"""
         self.id = str(uuid.uuid4())
-        self.created_at = datetime.utcnow()
-        self.updated_at = datetime.utcnow()
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
 
     def save(self):
         """
         updates the updated_at attribute with the
         current datetime
         """
-        self.updated_at = datetime.utcnow()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """serialization"""
@@ -36,10 +36,10 @@ class BaseModel:
         string representation of
         the class
         """
-        class_name = self.__class__.name__
+        class_name = self.__class__.__name__
         return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     my_model = BaseModel()
     my_model.name = "My First Model"
     my_model.my_number = 89
