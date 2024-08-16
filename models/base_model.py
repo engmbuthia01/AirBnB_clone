@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines the class
+This package defines the class
 Basemodel
 """
 
@@ -8,8 +8,9 @@ import uuid
 from datetime import datetime
 
 
-class Basemodel:
+class BaseModel:
     def __init__(self):
+        """initializes a new instance of the BaseModel"""
         self.id = str(uuid.uuid4())
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
