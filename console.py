@@ -27,5 +27,9 @@ class HBNBCommand(cmd.Cmd):
         print()
         return True
 
+    def emptyline(self):
+        """overrides the default behavior"""
+        pass
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
